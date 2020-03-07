@@ -97,8 +97,8 @@ nano settings.json
 | fontsize | 0.7 | Font size |
 | fonttype | 0 | Controls the smoothness of the fonts. 0=Antialiased, 1=8 Connected, 2=4 Connected. |
 | fontline | 1 | font line thickness |
-| latitude | 60.7N | Latitude of the camera. N for North and S for South
-| longitude | 135.05W | longitude of the camera. E for East and W for West |
+| latitude | 51.28N | Latitude of the camera. N for North and S for South
+| longitude | 0.18E | longitude of the camera. E for East and W for West |
 | angle | -6 | Altitude of the sun above or below the horizon at which capture should start/stop. Can be negative (sun below horizon) or positive (sun above horizon). 0=Sunset, -6=Civil twilight, -12=Nautical twilight, -18=Astronomical twilight.
 | time | 1 | Replaces the text overlay |
 | darkframe | 0 | Set to 1 to enable dark frame capture. In this mode, overlays are hidden and the image is saved as dark.png by default |
