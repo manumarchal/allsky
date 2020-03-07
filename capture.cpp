@@ -202,8 +202,8 @@ int main(int argc, char *argv[])
     int asiGamma          = 50;
     int asiBrightness     = 50;
     int asiFlip           = 0;
-    char const *latitude  = "60.7N"; //GPS Coordinates of Whitehorse, Yukon where the code was created
-    char const *longitude = "135.05W";
+    char const *latitude  = "51.28N"; //GPS Coordinates of Whitehorse, Yukon where the code was created
+    char const *longitude = "0.18E";
     char const *angle =
         "-6"; // angle of the sun with the horizon (0=sunset, -6=civil twilight, -12=nautical twilight, -18=astronomical twilight)
     int preview        = 0;
@@ -496,8 +496,8 @@ int main(int argc, char *argv[])
         //printf(" -bga = BG Alpha                    - Default =      - Text Background Color Alpha/Transparency 0-100\n");
         printf("\n");
         printf("\n");
-        printf(" -latitude                          - Default = 60.7N (Whitehorse)   - Latitude of the camera.\n");
-        printf(" -longitude                         - Default = 135.05W (Whitehorse) - Longitude of the camera\n");
+        printf(" -latitude                          - Default = 51.28N (Sevenoaks)   - Latitude of the camera.\n");
+        printf(" -longitude                         - Default = 0.18E (Sevenoaks) - Longitude of the camera\n");
         printf(" -angle                             - Default = -6 - Angle of the sun below the horizon. -6=civil "
                "twilight, -12=nautical twilight, -18=astronomical twilight\n");
         printf("\n");
@@ -597,10 +597,16 @@ int main(int argc, char *argv[])
         height = iMaxHeight;
     }
 
+//marchal    long lcpu     = 0;
+//    ASI_BOOL bAuto = ASI_FALSE;
+//    ASIGetControlValue(CamNum, ASI_TEMPERATURE, &lcpu, &bAuto);
+//    printf("- CPU temperature:%02f\n", (float)lcpu / 10.0);
+
     long ltemp     = 0;
     ASI_BOOL bAuto = ASI_FALSE;
     ASIGetControlValue(CamNum, ASI_TEMPERATURE, &ltemp, &bAuto);
     printf("- Sensor temperature:%02f\n", (float)ltemp / 10.0);
+
 
     // Adjusting variables for chosen binning
     height    = height / bin;
@@ -800,6 +806,10 @@ int main(int argc, char *argv[])
 
                         if (showDetails == 1)
                         {
+          // marchal                 sprintf(bufTemp, "CPU %.1fC", (float)lcpu / 10);
+          //                  cvText(pRgb, bufTemp, iTextX, iTextY + (iYOffset / bin), fontsize * 0.8, linewidth,
+           //                        linetype[linenumber], fontname[fontnumber], smallFontcolor, Image_type, outlinefont);
+           //                 iYOffset += 30;
                             sprintf(bufTemp, "Sensor %.1fC", (float)ltemp / 10);
                             cvText(pRgb, bufTemp, iTextX, iTextY + (iYOffset / bin), fontsize * 0.8, linewidth,
                                    linetype[linenumber], fontname[fontnumber], smallFontcolor, Image_type, outlinefont);
