@@ -22,4 +22,4 @@ echo \"sunset\": \"$today"T"$timeNoZone":00.000$timezone"\", >> data.json
 echo \"streamDaytime\": \"$streamDaytime\" >> data.json
 echo } >> data.json
 echo "Uploading data.json"
-lftp "$PROTOCOL"://"$USER":"$PASSWORD"@"$HOST":"$IMGDIR" -e "set net:max-retries 1; set net:timeout 20; put data.json; bye"
+lftp "$PROTOCOL"://"$USER":"$PASSWORD"@"$HOST" -e "cd $IMGDIR; set net:max-retries 1; set net:timeout 20; put data.json; bye"
