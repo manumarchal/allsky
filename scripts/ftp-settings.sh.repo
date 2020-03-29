@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # FTP/SFTP settings
-PROTOCOL='ftp'
+PROTOCOL='sftp'
 USER='username'
 PASSWORD='password'
 HOST='example.com'
-IMGDIR='/allsky/'
-MP4DIR='/allsky/videos/'
-KEOGRAM_DIR='/allsky/keograms/'
-STARTRAILS_DIR='/allsky/startrails/'
+IMGDIR='allsky'
+MP4DIR='allsky/videos'
+KEOGRAM_DIR='allsky/keograms'
+STARTRAILS_DIR='allsky/startrails'
