@@ -25,8 +25,9 @@ if [[ $KEOGRAM == "true" ]]; then
         ../keogram /home/pi/allsky/images/$LAST_NIGHT/ $EXTENSION /home/pi/allsky/images/$LAST_NIGHT/keogram/keogram-$LAST_NIGHT.jpg
 	if [[ $UPLOAD_KEOGRAM == "true" ]] ; then
 		OUTPUT="/home/pi/allsky/images/$LAST_NIGHT/keogram/keogram-$LAST_NIGHT.jpg"
-                lftp "$PROTOCOL"://"$USER":"$PASSWORD"@"$HOST" \
-                        -e "cd $KEOGRAM_DIR; set net:max-retries 1; put $OUTPUT; bye"
+		cp $OUTPUT; /home/pi/allsky/images/keograms/
+        lftp "$PROTOCOL"://"$USER":"$PASSWORD"@"$HOST" \
+			-e "cd $KEOGRAM_DIR; set net:max-retries 1; put $OUTPUT; bye"
 	fi
         echo -e "\n"
 fi
@@ -38,7 +39,8 @@ if [[ $STARTRAILS == "true" ]]; then
         ../startrails /home/pi/allsky/images/$LAST_NIGHT/ $EXTENSION $BRIGHTNESS_THRESHOLD /home/pi/allsky/images/$LAST_NIGHT/startrails/startrails-$LAST_NIGHT.jpg
 	if [[ $UPLOAD_STARTRAILS == "true" ]] ; then
 		OUTPUT="/home/pi/allsky/images/$LAST_NIGHT/startrails/startrails-$LAST_NIGHT.jpg"
-                lftp "$PROTOCOL"://"$USER":"$PASSWORD"@"$HOST" \
+		cp $OUTPUT; /home/pi/allsky/images/startrails/
+		lftp "$PROTOCOL"://"$USER":"$PASSWORD"@"$HOST" \
 			-e "cd $STARTRAILS_DIR; set net:max-retries 1; put $OUTPUT; bye"
         fi
 

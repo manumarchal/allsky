@@ -19,12 +19,14 @@ fi
 echo -e "Generating Keogram\n"
 mkdir -p /home/pi/allsky/images/$1/keogram/
 ../keogram /home/pi/allsky/images/$1/ $EXTENSION /home/pi/allsky/images/$1/keogram/keogram-$1.jpg
+cp /home/pi/allsky/images/$1/keograms/keogram-$1.jpg /home/pi/allsky/images/keograms/keogram-$1.jpg
 echo -e "\n"
 
 # Generate startrails from collected images. Treshold set to 0.1 by default in config.sh to avoid stacking over-exposed images
 echo -e "Generating Startrails\n"
 mkdir -p /home/pi/allsky/images/$1/startrails/
 ../startrails /home/pi/allsky/images/$1/ $EXTENSION $BRIGHTNESS_THRESHOLD /home/pi/allsky/images/$1/startrails/startrails-$1.jpg
+cp /home/pi/allsky/images/$1/startrails/startrails-$1.jpg /home/pi/allsky/images/startrails/startrails-$1.jpg
 echo -e "\n"
 
 # Generate timelapse from collected images
