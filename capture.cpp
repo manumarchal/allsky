@@ -482,8 +482,7 @@ int main(int argc, char *argv[])
         printf("\n");
         printf(" -text                              - Default =      - Character/Text Overlay. Use Quotes.  Ex. -c "
                "\"Text Overlay\"\n");
-        printf(
-            " -textx                             - Default = 15   - Text Placement Horizontal from LEFT in Pixels\n");
+        printf(" -textx                             - Default = 15   - Text Placement Horizontal from LEFT in Pixels\n");
         printf(" -texty = Text Y                    - Default = 25   - Text Placement Vertical from TOP in Pixels\n");
         printf(" -fontname = Font Name              - Default = 0    - Font Types (0-7), Ex. 0 = simplex, 4 = triplex, "
                "7 = script\n");
@@ -597,16 +596,10 @@ int main(int argc, char *argv[])
         height = iMaxHeight;
     }
 
-//marchal    long lcpu     = 0;
-//    ASI_BOOL bAuto = ASI_FALSE;
-//    ASIGetControlValue(CamNum, ASI_TEMPERATURE, &lcpu, &bAuto);
-//    printf("- CPU temperature:%02f\n", (float)lcpu / 10.0);
-
     long ltemp     = 0;
     ASI_BOOL bAuto = ASI_FALSE;
     ASIGetControlValue(CamNum, ASI_TEMPERATURE, &ltemp, &bAuto);
     printf("- Sensor temperature:%02f\n", (float)ltemp / 10.0);
-
 
     // Adjusting variables for chosen binning
     height    = height / bin;
@@ -806,10 +799,6 @@ int main(int argc, char *argv[])
 
                         if (showDetails == 1)
                         {
-          // marchal                 sprintf(bufTemp, "CPU %.1fC", (float)lcpu / 10);
-          //                  cvText(pRgb, bufTemp, iTextX, iTextY + (iYOffset / bin), fontsize * 0.8, linewidth,
-           //                        linetype[linenumber], fontname[fontnumber], smallFontcolor, Image_type, outlinefont);
-           //                 iYOffset += 30;
                             sprintf(bufTemp, "Sensor %.1fC", (float)ltemp / 10);
                             cvText(pRgb, bufTemp, iTextX, iTextY + (iYOffset / bin), fontsize * 0.8, linewidth,
                                    linetype[linenumber], fontname[fontnumber], smallFontcolor, Image_type, outlinefont);
